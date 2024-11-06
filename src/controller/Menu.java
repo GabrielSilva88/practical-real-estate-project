@@ -26,9 +26,13 @@ public class Menu {
 
 	// menu interativo
 	public void exibirMenu() {
-		System.out.println("\n --------- Menu Imobiliária:\r\n------" + "			1 - Adicionar Construção.\r\n"
-				+ "			2 - Remover Construção.\r\n" + "			3 - Listar Construções.\r\n"
-				+ "			4 - Informar Área total.\r\n" + "			5 - Sair.");
+		System.out.println("\n Menu Imobiliária:\n" 
+				+ "	1 - Adicionar Construção.\n"
+				+ "	2 - Remover Construção.\n" 
+				+ "	3 - Listar Construções.\n"
+				+ "	4 - Informar Área total.\n" 
+				+ "	5 - Sair.");
+		System.out.println(" \n Digite: ");
 		int opcao = scan.nextInt();
 
 		do {
@@ -99,7 +103,9 @@ public class Menu {
 
 		System.out.println("Digite o endereço: ");
 		String end = scan.nextLine();
-
+		
+		scan.nextLine();
+		
 		System.out.println("Digite o valor: ");
 		double val = scan.nextDouble();
 

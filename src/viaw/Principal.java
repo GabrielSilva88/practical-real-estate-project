@@ -8,17 +8,16 @@
 package viaw;
 
 import controller.Imobiliaria;
+import controller.Menu;
 
-public class HomeMain {
+public class Principal {
 
 	public static void main(String[] args) {
 		Imobiliaria i = new Imobiliaria();
 		
-		i.adicionarConstrucao(null);
+		Menu m = new Menu();
 		
-		i.removerConstrucao(null);
-		
-		i.listarConstrucaes();
+		m.exibirMenu();
 		
 	}
 }
