@@ -32,6 +32,7 @@ public class Menu {
 				+ "	3 - Listar Construções.\n"
 				+ "	4 - Informar Área total.\n" 
 				+ "	5 - Sair.");
+		scan.nextLine();
 		System.out.println(" \n Digite: ");
 		int opcao = scan.nextInt();
 

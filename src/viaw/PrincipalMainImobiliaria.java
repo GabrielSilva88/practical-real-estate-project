@@ -10,14 +10,13 @@ package viaw;
 import controller.Imobiliaria;
 import controller.Menu;
 
-public class Principal {
+public class PrincipalMainImobiliaria {
 
 	public static void main(String[] args) {
-		Imobiliaria i = new Imobiliaria();
 		
 		Menu m = new Menu();
 		
 		m.exibirMenu();
-		
+	
 	}
 }
