@@ -32,10 +32,10 @@ public class Menu {
 				+ "	3 - Listar Construções.\n"
 				+ "	4 - Informar Área total.\n" 
 				+ "	5 - Sair.");
-		scan.nextLine();
+
 		System.out.println(" \n Digite: ");
 		int opcao = scan.nextInt();
-
+		boolean loop=true;
 		do {
 			switch (opcao) {
 			case 1: {
@@ -55,13 +55,15 @@ public class Menu {
 				break;
 			}
 			case 5: {
+				loop = false;
 				System.out.println("Saindo do sistema...");
 				break;
+				
 			}
 			default:
 				System.out.println(opcao + "Opção invalida, tente novamente.");
 			}
-		} while (opcao != 5);
+		} while (loop != true);
 	}
 
 	// método informar a área total
