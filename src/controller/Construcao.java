@@ -9,8 +9,8 @@
 package controller;
 
 public interface Construcao {
+	
 	double calcularArea();
 	String getDescricao();
-	
-	
+		
 }

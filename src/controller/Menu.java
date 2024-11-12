@@ -26,17 +26,15 @@ public class Menu {
 
 	// menu interativo
 	public void exibirMenu() {
-		System.out.println("\n Menu Imobiliária:\n" 
-				+ "	1 - Adicionar Construção.\n"
-				+ "	2 - Remover Construção.\n" 
-				+ "	3 - Listar Construções.\n"
-				+ "	4 - Informar Área total.\n" 
-				+ "	5 - Sair.");
+		System.out.println("\n Menu Imobiliária:\n" + "	1 - Adicionar Construção.\n" + "	2 - Remover Construção.\n"
+				+ "	3 - Listar Construções.\n" + "	4 - Informar Área total.\n" + "	5 - Sair.");
 
-		System.out.println(" \n Digite: ");
-		int opcao = scan.nextInt();
-		boolean loop=true;
+		boolean loop = true;
+
 		do {
+			System.out.println(" \n Digite: ");
+			int opcao = scan.nextInt();
+
 			switch (opcao) {
 			case 1: {
 				adicionarConstrucao();
@@ -55,13 +53,14 @@ public class Menu {
 				break;
 			}
 			case 5: {
-				loop = false;
 				System.out.println("Saindo do sistema...");
+				loop = false;
 				break;
-				
 			}
 			default:
 				System.out.println(opcao + "Opção invalida, tente novamente.");
+				loop = false;
+				break;
 			}
 		} while (loop != true);
 	}
@@ -75,23 +74,23 @@ public class Menu {
 	// método listar construções
 	private void listarConstrucao() {
 		imobiliaria.listarConstrucaes();
-		
+
 	}
 
 	// método remove a construções da lista
 	private void removerConstrucao() {
 		System.out.println("Informe o endereço a ser removido: ");
 		String endereco = scan.nextLine();
-		
+
 		Construcao construcaoRemover = null;
-		
+
 		for (Construcao construcao : Imobiliaria.getCatalogo()) {
 			if (((Imovel) construcao).getEndereco().equalsIgnoreCase(endereco)) {
 				construcaoRemover = construcao;
 				break;
 			}
 		}
-		
+
 		if (construcaoRemover != null) {
 			imobiliaria.removerConstrucao(construcaoRemover);
 		} else {
@@ -106,9 +105,9 @@ public class Menu {
 
 		System.out.println("Digite o endereço: ");
 		String end = scan.nextLine();
-		
+
 		scan.nextLine();
-		
+
 		System.out.println("Digite o valor: ");
 		double val = scan.nextDouble();
 
@@ -118,7 +117,7 @@ public class Menu {
 		case 1:
 			System.out.println("Informe a largura da casa: ");
 			double larguraCasa = scan.nextDouble();
-			
+
 			System.out.println("Informe a largura da casa: ");
 			double comprimentoCasa = scan.nextDouble();
 			construcao = new Casa(end, val, comprimentoCasa, larguraCasa);
@@ -126,7 +125,7 @@ public class Menu {
 		case 2:
 			System.out.println("Informe a largura da Predio: ");
 			double areaAndar = scan.nextDouble();
-			
+
 			System.out.println("Informe a largura da Predio: ");
 			int numeroAndar = scan.nextInt();
 			construcao = new Predio(end, val, tipo, numeroAndar);
@@ -134,7 +133,7 @@ public class Menu {
 		case 3:
 			System.out.println("Informe a largura da Loja: ");
 			double larguraLoja = scan.nextDouble();
-			
+
 			System.out.println("Informe a largura da Loja: ");
 			double comprimentoLoja = scan.nextDouble();
 			construcao = new Loja(end, val, larguraLoja, comprimentoLoja);
@@ -143,7 +142,7 @@ public class Menu {
 			System.out.println("Opção inválida");
 			break;
 		}
-		
+
 		imobiliaria.adicionarConstrucao(construcao);
 	}
 }
